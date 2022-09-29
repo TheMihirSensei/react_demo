@@ -1,13 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
-
-const root = ReactDOM.createRoot(document.getElementById('root'));
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import "bootstrap/dist/css/bootstrap.min.css";
+import reportWebVitals from "./reportWebVitals";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Employee from "./components/Employee";
+import EditEmployee from "./components/EditEmployee";
+import CreateEmployee from "./components/CreateEmployee";
+const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <App />
+    <Router>
+      <Routes>
+        <Route path="/" element={<App />} />
+        <Route path="/employee" element={<Employee />} />
+        <Route path="/employee/:id" element={<EditEmployee />} />
+        <Route path="/employee/add" element={<CreateEmployee />} />
+      </Routes>
+    </Router>
   </React.StrictMode>
 );
 

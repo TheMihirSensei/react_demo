@@ -1,25 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import Employee from "./components/Employee";
+import io from "socket.io-client";
+import { useEffect } from "react";
+// const socket = io.connect("https://92e7-150-107-232-227.in.ngrok.io");
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  return <div className="App">{/* <Employee /> */}</div>;
 }
 
 export default App;
