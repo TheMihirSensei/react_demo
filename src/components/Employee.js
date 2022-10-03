@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import supabase from "../supabase.client";
 import { useNavigate } from "react-router-dom";
+import { IoAddSharp } from "react-icons/io5";
 
 function Employee() {
   const [employees, setEmployees] = useState([]);
@@ -21,16 +22,22 @@ function Employee() {
   }, []);
   return (
     <div className="container">
-      <div className="d-flex justify-content-around">
-        <h1>Employees</h1>
-        <button
-          className="btn btn-info"
+      <div
+        style={{
+          width: "80%",
+          display: "flex",
+
+          margin: "1em auto",
+          justifyContent: "space-between",
+        }}
+      >
+        <div style={{ fontSize: "2em" }}>Employees: </div>
+        <IoAddSharp
+          style={{ fontSize: "2em" }}
           onClick={() => navigate("/employee/add")}
-        >
-          +
-        </button>
+        />
       </div>
-      <table className="table">
+      <table className="table table-striped table-dark">
         <thead className="thead-dark">
           <tr>
             <th scope="col">First Name</th>

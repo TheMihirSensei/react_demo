@@ -27,9 +27,12 @@ const EditEmployee = () => {
     e.preventDefault();
     console.log(employee);
 
-    const { data, error } = await supabase.from("employees").insert([employee]);
+    const { data, error } = await supabase
+      .from("employees")
+      .update(employee)
+      .match({ id });
     if (data) {
-      alert("Added Successfully");
+      alert("updated Successfully");
       navigate("/employee");
     } else {
       alert(error);

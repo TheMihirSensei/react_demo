@@ -8,6 +8,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Employee from "./components/Employee";
 import EditEmployee from "./components/EditEmployee";
 import CreateEmployee from "./components/CreateEmployee";
+import Project from "./components/Project";
+import CreateProject from "./components/CreateProject";
+import EditProject from "./components/EditProject";
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
@@ -17,6 +20,9 @@ root.render(
         <Route path="/employee" element={<Employee />} />
         <Route path="/employee/:id" element={<EditEmployee />} />
         <Route path="/employee/add" element={<CreateEmployee />} />
+        <Route path="/project" element={<Project />} />
+        <Route path="/project/add" element={<CreateProject />} />
+        <Route path="/project/:id" element={<EditProject />} />
       </Routes>
     </Router>
   </React.StrictMode>
